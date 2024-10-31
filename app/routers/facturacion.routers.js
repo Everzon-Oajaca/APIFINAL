@@ -13,6 +13,8 @@ router.get('/api/facturacion/all', facturacion.retrieveAllFacturas);
 router.get('/facturacion/all', facturacion.retrieveAllFacturas);
 // Ruta para contar el número de facturas pendientes
 router.get('/api/facturacion/pendientes', facturacion.countFacturasPendientes);
+router.get('/api/facturacion/pagadas', facturacion.countFacturasPagadas);
+router.get('/api/facturacion/anuladas', facturacion.countFacturasAnuladas);
 
 // Obtener una factura por su ID
 router.get('/api/facturacion/onebyid/:id', facturacion.getFacturaById);
