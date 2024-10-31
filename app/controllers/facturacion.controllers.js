@@ -74,6 +74,35 @@ exports.countFacturasPendientes = async (req, res) => {
   }
 };
 
+// Contar facturas pagadas
+exports.countFacturasPagadas = async (req, res) => {
+  try {
+    const count = await Facturacion.count({
+      where: { ESTADO: 'Pagada' }
+    });
+    res.status(200).json({ count });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error al contar las facturas pagadas",
+      error: error.message,
+    });
+  }
+};
+
+// Contar facturas anuladas
+exports.countFacturasAnuladas = async (req, res) => {
+  try {
+    const count = await Facturacion.count({
+      where: { ESTADO: 'Anulada' }
+    });
+    res.status(200).json({ count });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error al contar las facturas anuladas",
+      error: error.message,
+    });
+  }
+};
 
 // Obtener ingresos mensuales
 exports.getIngresoMensual = async (req, res) => {
