@@ -23,7 +23,10 @@ db.sequelize.sync().then(() => {
 });
 
 // Configuración de CORS para permitir solicitudes desde localhost y el dominio en producción
-const allowedOrigins = ['https://dashboard-hotel.onrender.com'];
+const allowedOrigins = [
+  'https://dashboard-hotel.onrender.com',
+  'https://my-frontend-1ucr.onrender.com'
+];
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
