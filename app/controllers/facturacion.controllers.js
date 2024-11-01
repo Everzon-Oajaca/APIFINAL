@@ -78,7 +78,7 @@ exports.countFacturasPendientes = async (req, res) => {
 exports.countFacturasPagadas = async (req, res) => {
   try {
     const count = await Facturacion.count({
-      where: { ESTADO: 'Pagada' }
+      where: { ESTADO: 'Pagado' }
     });
     res.status(200).json({ count });
   } catch (error) {
@@ -93,7 +93,7 @@ exports.countFacturasPagadas = async (req, res) => {
 exports.countFacturasAnuladas = async (req, res) => {
   try {
     const count = await Facturacion.count({
-      where: { ESTADO: 'Anulada' }
+      where: { ESTADO: 'Anulado' }
     });
     res.status(200).json({ count });
   } catch (error) {
